@@ -1,0 +1,129 @@
+body{
+        /*Estilo general del cuerpo*/
+        background-color: rgb(233, 233, 233);
+        font-family: 'Times New Roman', Times, serif;
+      }
+
+      /*Estilo de la barra de navegación*/
+      .navbar{
+        background-color: rgb(238, 234, 226);
+        border-bottom: 10px solid rgb(122, 105, 30);
+      }
+
+      .navbar-brand{
+        font-weight: bold;
+        color: rgb(0, 0, 119);
+      }
+
+      /*Carrusel*/
+      .carousel-inner img{
+        object-fit: cover;   /* Para que la imagen cubra el área sin deformarse */
+      }
+      #carouselExampleIndicators {
+        max-width: 1115px;  /* Limita el ancho */
+        margin-left: auto; /* Centra horizontalmente */
+        margin-right: auto;
+        margin-top: 2rem;  
+        margin-bottom: 2rem;
+      }
+      /* Estilo para el títulos h2 */
+      h2{
+        color: rgb(99, 59, 7);
+        margin-bottom: 30px;
+
+      }
+
+      /*Estilo de las tarjetas*/
+      .card{
+        border: none;
+      }
+
+      .card:hover{
+        transform: translateY(-15px); /*Efecto de Levantamiento al pasar el mouse*/
+
+      }
+
+      .card-title{
+        color: rgb(0, 0, 0);
+      }
+
+      .card-text{
+        color: rgb(46, 45, 45);
+        font-size: 20px;
+      }
+
+      /*Estilo del botón del acordeón*/
+      .accordion-button{
+        background-color: beige;
+      }
+
+      /*Contenedor del mapa con estilo decorativo*/
+      .map-container {
+            background-color: rgb(245, 239, 230); /* Fondo color crema */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        iframe {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+                /* Contenedor animado con enlace */
+        .animated-container a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .animated-container a:hover {
+            color: #0056b3;
+        }   
+        
+        .animated-container {
+            background-color: #f7fcfd;
+            border: 2px solid #a3c7c9;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            margin: 100px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .animated-container:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+         /*Estilo del pie de página y redes sociales*/
+      .nuestro-footer{
+        background-color: rgb(190, 165, 141);;
+        
+      }
+
+      .redes-sociales{
+        color: white;
+      }
+
+      .redes-sociales.facebook:hover{
+        color: #375596;
+      }
+
+      .redes-sociales.instagram:hover{
+        color: #E1306C;
+      }
+
+      .redes-sociales.youtube:hover{
+        color: red;
+      }
+
+      .redes-sociales.tiktok:hover{
+        color: black;
+      }
+      
