@@ -1,0 +1,379 @@
+<!DOCTYPE html> <!--Define el tipo de documento como HTML5-->
+<html lang="es"> <!--Indica el idioma principal del contenido, en este caso el español-->
+<head>
+ <meta name="google-site-verification" content="b63ReR7UZbkBT8EL23kriM9tECIX6Tp1BQpf6otAAEY" />
+    <meta charset="UTF-8"> <!--Establece la codificación de caracteres-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Hace que la página sea responsive-->
+    <title>Adopta con Amor</title> <!--Título que aparece en la pestaña del navegador-->
+
+    <!--Carga CSS de Bootstrap y los iconos-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Estilos internos personalizados-->
+    <style>
+      body{
+        /*Estilo general del cuerpo*/
+        background-color: rgb(233, 233, 233); /* Color de fondo beige claro*/
+        font-family: 'Times New Roman', Times, serif; /*Borde inferior decorativo marrón*/
+      }
+
+      /*Estilo de la barra de navegación*/
+      .navbar{
+        background-color: rgb(238, 234, 226);
+        border-bottom: 10px solid rgb(122, 105, 30);
+      }
+
+      .navbar-brand{
+        font-weight: bold; /*Texto en negrita para la marca*/
+        color: rgb(0, 0, 119); /*Color oscuro para destacar*/
+      }
+
+      /*Carrusel*/
+      .carousel-inner img{
+        object-fit: cover;   /* Para que la imagen cubra el área sin deformarse */
+      }
+      #carouselExampleIndicators {
+        max-width: 1115px;  /* Limita el ancho */
+        margin-left: auto; /* Centra horizontalmente */
+        margin-right: auto;
+        margin-top: 2rem;  /*Espacio arriba*/
+        margin-bottom: 2rem; /*Espacio abajo*/
+      }
+      /* Estilo para el títulos h2 */
+      h2{
+        color: rgb(99, 59, 7); /*Color marrón oscuro*/
+        margin-bottom: 30px; /*Espacio debajo para separar del contenido*/
+
+      }
+
+      /*Estilo de las tarjetas*/
+      .card{
+        border: none; /*Elimina bordes predeterminados para un diseño más limpio*/
+      }
+
+      .card:hover{
+        transform: translateY(-15px); /*Efecto de levantamiento al pasar el mouse*/
+
+      }
+
+      .card-title{
+        color: rgb(0, 0, 0); /*Texto negro para títulos*/
+      }
+
+      .card-text{
+        color: rgb(46, 45, 45); /*Texto gris oscuro para buen constraste*/
+        font-size: 20px; /*Texto legible y destacable*/
+      }
+
+      /*Estilo del botón del acordeón*/
+      .accordion-button{
+        background-color: beige; /*Color suave para los botones del acordeón*/
+      }
+
+      /*Contenedor del mapa con estilo decorativo*/
+      .map-container {
+            background-color: rgb(245, 239, 230); /* Fondo color crema */
+            padding: 20px; /*Espacio interno*/
+            border-radius: 10px; /* Bordes redondeados*/
+            text-align: center; /*Centrar contenido*/
+        }
+
+        iframe {
+            border: none; /*Sin border para el iframe del mapa*/
+            border-radius: 10px;/*Bordes redondeados*/
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);/*Sombra suave*/
+        }
+
+                /* Contenedor animado con enlace */
+        .animated-container a {
+            text-decoration: none;/*Sin subrayado en el enlace*/
+            color: #007bff;/*Color azul Bootstrap*/
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;/*Transición suave al cambiar color*/
+        }
+
+        .animated-container a:hover {
+            color: #0056b3; /*Cambio de color azul más oscuro al pasar el mouse*/
+        }   
+        
+        .animated-container {
+            background-color: #f7fcfd; /*Fondo blanco*/
+            border: 2px solid #a3c7c9;/* Borde azul suave*/
+            border-radius: 15px; /*Bordes redondeados*/
+            padding: 20px;/*Espacio interno*/
+            text-align: center;
+            width: 300px;/*Ancho fijo*/
+            margin: 100px auto; /*Centrado horizontal y margen vertical*/
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);/*Sombra suave*/
+            transition: transform 0.3s ease, box-shadow 0.3s ease;/*Animacón para hover*/
+        }
+
+        .animated-container:hover {
+            transform: scale(1.1);/*Escala al 110% al pasar el mouse*/
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);/*Sombra más marcada*/
+        }
+
+         /*Estilo del pie de página y redes sociales*/
+      .nuestro-footer{
+        background-color: rgb(190, 165, 141); /*Color marrón claro*/
+        
+      }
+
+      .redes-sociales{
+        color: white;
+      }
+
+      .redes-sociales.facebook:hover{
+        color: #375596;
+      }
+
+      .redes-sociales.instagram:hover{
+        color: #E1306C;
+      }
+
+      .redes-sociales.youtube:hover{
+        color: red;
+      }
+
+      .redes-sociales.tiktok:hover{
+        color: black;
+      }
+      
+    </style>
+  </head>
+<body>
+    <!--Menú de navegación superior-->
+ <nav class="navbar navbar-expand-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Menú</a> 
+    <!--Botón para dispositivos móviles (Colapsa el menú)-->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span> <!--Icono hamburguesa que muestra/oculta menú en móviles-->
+    </button>
+    <!--Contenedor colapsable con los enlaces del menú-->
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ms-auto"> <!--ms-auto empuja el menú a la derecha-->
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#Mascotas">Mascotas</a> 
+          <!--Enlace al ancla #Mascota, indica que esta es la página activa-->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Historia">Historia</a>
+          <!--Enlace al ancla #Historia-->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Tienda">Tienda</a>
+          <!--Enlace al ancla #Tienda-->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Formulario.php">Formulario</a>
+          <!--Enlace a otra página llamada Formulario.php-->
+        </li>
+      </ul>
+
+    </div>
+  </div>
+ </nav>
+
+
+  <!--Carrusel de imágenes con indicadores y controles-->
+  <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <!--Botones para seleccionar cada slide-->
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <!--Imágenes del carrusel-->
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="max-height: 700px;">
+          <img src="IMAGENES/Adoptme.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" style="max-height: 700px;">
+          <img src="IMAGENES/Voluntarios.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" style="max-height: 700px;">
+          <img src="IMAGENES/Eat.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <!--Botones de navegación-->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span><!--Icono flecha izquierda-->
+        <span class="visually-hidden">Previous</span> <!--Texto accesible para lectores de pantalla-->
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span> <!--Icono flecha derecha-->
+        <span class="visually-hidden">Next</span> <!--Texto accesible para lectores de pantalla-->
+      </button>
+    </div>
+
+    <!--Sección de mascotas con tarjetas -->
+
+    <section class="container mt-5 d-none d-md-block" id="Mascotas"> 
+      <h2 class="text-center">Mascotas en Adopción</h2>
+      <div class="row">
+        <!--Tarjeta Bobby-->
+          <div class="col-md-4">
+              <div class="card">
+                  <img src="IMAGENES/Bobby.png" class="card-img-top rounded" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Bobby</h5>
+                    <p class="card-text">Bobby ha tenido un pasado difícil, pero nunca ha perdido su dulzura. Solo necesita una familia que le dé el amor que merece. ¿Serás tú quien le dé ese final feliz?</p>
+                  <a href="detalle-bobby.html" class="btn btn-primary">Ver detalles</a>
+                  </div>
+                </div>
+          </div>
+          <!--Tarjeta Milo-->
+          <div class="col-md-4">
+              <div class="card">
+                  <img src="IMAGENES/Milo.png" class="card-img-top rounded" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Milo</h5>
+                    <p class="card-text">Milo llegó buscando refugio y ahora solo quiere un hogar donde sentirse seguro. Si estás listo para amar y dejarte amar por un gato especial, Milo te está esperando.</p>
+                    <a href="detalle-milo.html" class="btn btn-primary">Ver detalles</a>
+                  </div>
+                </div>
+                <!--Tarjeta Sonni-->
+          </div><div class="col-md-4">
+              <div class="card">
+                  <img src="IMAGENES/Sonni.png" class="card-img-top rounded" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Sonni</h5>
+                    <p class="card-text">Abandonado pero nunca vencido, Sonni sigue confiando en las personas. Solo busca un hogar donde sentirse amado y seguro. ¿Te animas a ser su final feliz?</p>
+                    <a href="detalle-soni.html" class="btn btn-primary">Ver detalles</a>
+                  </div>
+                </div>
+          </div>
+      </div>
+    </section>
+    <!--Sección de historias-->
+    <section class="container mt-5" id="Historia">
+        <h2 class="text-center mb-4">Historias de Vida</h2>
+        <!-- Componente acordeón de Bootstrap -->
+        <div class="accordion" id="accordionExample">
+            <!-- Historia del gatito Milo-->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#historia1">
+                        La historia del gatito Milo
+                    </button>
+                </h2>
+                <div id="historia1" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Rescatado en un parque abandonado, el gatito ha demostrado ser un fiel compañero y se lleva bien con otros animales.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Historia del perrito Bobby -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#historia2">
+                        La historia del perrito Bobby
+                    </button>
+                </h2>
+                <div id="historia2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Abandonado cuando era solo una cría, el perrito fue cuidado por un refugio y ahora está listo para una familia amorosa.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Video de YouTube-->
+    <div class="container my-4 text-center">
+    <iframe width="700" height="455" src="https://www.youtube.com/embed/X7N_Ow8RP18?si=mWolionCJyzNqQiQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!--Sección tienda-->
+    <section class="container mt-5 d-none d-md-block" id="Tienda"> 
+      <h2 class="text-center">Nuestra tienda</h2>
+      <div class="row">
+        <!--Producto: Pelota-->
+          <div class="col-md-4">
+              <div class="card">
+                  <img src="IMAGENES/Petball.png" class="card-img-top rounded" alt="Pelota divertida"  width="700px" height="450px">
+                  <div class="card-body">
+                    <h5 class="card-title">Pelota divertida</h5>
+                    <p class="card-text">Ideal para perros y gatos. Colores vivos y material resistente.</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                  </div>
+                </div>
+          </div>
+          <!--Producto2: Cama-->
+          <div class="col-md-4">
+              <div class="card">
+                  <img src="IMAGENES/Cama.png" class="card-img-top rounded" alt="Cama Suave" width="700px" height="450px">
+                  <div class="card-body">
+                    <h5 class="card-title">Cama Suave</h5>
+                    <p class="card-text">Diseñada para un descanso cómodo. Disponible en varios tamaños.</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                  </div>
+                </div>
+                <!--Producto 3: Correa-->
+          </div>
+          <div class="col-md-4">
+              <div class="card">
+                  <img src="IMAGENES/Correa.png" class="card-img-top rounded" alt="..."  width="700px" height="450px">
+                  <div class="card-body">
+                    <h5 class="card-title">Correa elegante</h5>
+                    <p class="card-text">Correa ajustable con diseño ergonómico y material duradero.</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                  </div>
+                </div>
+          </div>
+      </div>
+    </section>
+
+<br>
+
+<!--Enlace a "Acerca de Nosotros"-->
+<div class="animated-container">
+        <a href="Acerca de nosotros.html"><strong>Acerca de Nosotros.</strong></a>
+    </div>
+
+    <!--Reproductor de audio-->
+    <div class="container my-4 text-center">
+      <audio controls>
+        <source src="AUDIO/Acerca_de_Nosotros.mp3" type="audio/mpeg">
+        Tu navegador no es compatible con el audio de HTML 5
+      </audio>
+    </div>
+
+    <!--Mapa de ubicación-->
+    <section class="container mt-5" id="Encuentranos">
+        <h2 class="text-center">Estamos ubicados en:</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.8651311374924!2d-88.186717225923!3d13.482407103475621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f7b2b003abe6ad7%3A0x86496d34f4aedf45!2sOportunidades-Fundaci%C3%B3n%20Gloria%20de%20Kriete!5e0!3m2!1ses!2ssv!4v1749434927937!5m2!1ses!2ssv" 
+                width="600" 
+                height="450" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!--Enlace a formulario-->
+    <div class="animated-container">
+        <a href="Formulario.html"><strong>Se uno de nosotros.</strong></a>
+    </div>
+
+    <!--Pie de Página con enlace a redes sociales-->
+    <footer class="container-fluid nuestro-footer p-5 text-center">
+      <div class="row">
+        <div class="col"> <a href="https://www.facebook.com/" class="text-decoration redes-sociales facebook"><i class="bi bi-facebook"></i>Facebook</a></div>
+        <div class="col"> <a href="https://www.instagram.com/" class="text-decoration redes-sociales instagram"><i class="bi bi-instagram"></i>Instagram</a></div>
+        <div class="col"> <a href="https://www.youtube.com/" class="text-decoration redes-sociales youtube"><i class="bi bi-youtube"></i>YouTube</a></div>
+        <div class="col"> <a href="https://www.tiktok.com/en/" class="text-decoration redes-sociales tiktok"><i class="bi bi-tiktok"></i>TikTok</a></div>
+      </div>
+        
+    </footer>
+
+    <!-- Bootstrap 5 JS (CDN) para funcionalidad dinámica -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
